@@ -232,3 +232,54 @@ document.querySelectorAll(".timezone-dropdown button").forEach(button => {
         setTimeout(renderCalendar, 50);
     });
 });
+// TIME SLOT SYSTEM
+const timeSlotList = document.getElementById("timeSlotList");
+const timeModeButtons = document.querySelectorAll(".time-mode");
+
+let currentTimeMode = "12h";
+
+function formatTime(hour, minute, mode) {
+    if (mode === "24h") {
+        return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+    }
+
+    const suffix = hour >= 12 ? "pm" : "am";
+    let displayHour = hour % 12;
+
+    if (displayHour === 0) {
+        displayHour = 12;
+    }
+
+    return `${displayHour}:${String(minute).padStart(2, "0")}${suffix}`;
+}
+
+function renderTimeSlots() {
+    if (!timeSlotList) return;
+
+    timeSlotList.innerHTML = "";
+
+    for (let hour = 0; hour <= 21; hour++) {
+        for (let minute = 0; minute < 60; minute += 30) {
+
+            if (hour === 21 && minute > 0) continue;
+
+            const button = document.createElement("button");
+            button.className = "time-slot";
+            button.textContent = formatTime(hour, minute, currentTimeMode);
+
+            timeSlotList.appendChild(button);
+        }
+    }
+}
+
+timeModeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        timeModeButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        currentTimeMode = button.textContent.trim();
+        renderTimeSlots();
+    });
+});
+
+renderTimeSlots();
