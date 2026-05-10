@@ -527,7 +527,7 @@ body {
 
 .review-card {
     width: 390px;
-    min-height: 250px;
+    min-height: 120px;
     flex: 0 0 auto;
     background: #ffffff;
     border: 1px solid #e8e8e8;
@@ -1173,6 +1173,17 @@ body {
 .booking-calendar,
 .booking-times {
     padding: 26px;
+
+    height: 100%;
+    max-height: 720px;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+}
+
+.booking-times::-webkit-scrollbar {
+    width: 0;
 }
 
 .booking-info {
@@ -1307,7 +1318,7 @@ body {
 .time-slot {
     width: 100%;
     padding: 11px 12px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.18);
     background: transparent;
@@ -1478,4 +1489,238 @@ body {
 .calendar-grid .calendar-date {
     height: 52px;
     border-radius: 10px;
+}
+
+/* MODERN ABOUT SECTION */
+
+.about-modern{
+    max-width: 760px;
+    margin: 45px auto 0;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.about-tag{
+    font-size: 16px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: #ff5a3d;
+    margin-bottom: 18px;
+}
+
+.about-name{
+    font-size: clamp(52px, 6vw, 78px);
+    line-height: 0.92;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.about-headline{
+    font-size: clamp(26px, 3.4vw, 42px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: #111;
+    margin-bottom: 18px;
+}
+
+.about-headline span{
+    color: #ff5a3d;
+}
+
+.about-line{
+    width: 50px;
+    height: 4px;
+    border-radius: 999px;
+    background: #ff5a3d;
+    margin-bottom: 28px;
+}
+
+.about-categories{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 34px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: rgba(0,0,0,0.72);
+}
+
+.about-text{
+    max-width: 690px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(0,0,0,0.72);
+    margin: 0 0 34px 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px){
+
+    .about-modern{
+        margin-top: 35px;
+    }
+
+    .about-name{
+        font-size: 52px;
+    }
+
+    .about-headline{
+        font-size: 28px;
+    }
+
+    .about-text{
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .about-categories{
+        gap: 10px;
+        letter-spacing: 2px;
+    }
+}
+/* REMOVE BLUE CLICK OUTLINE */
+
+*{
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.hero-btn{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hero-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.18);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.hero-btn:hover::before{
+    left: 120%;
+}
+
+.hero-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 90, 61, 0.28);
+}
+/* CLIENT TESTIMONIAL SHORTS */
+
+.client-testimonial-row{
+    width: 100%;
+    max-width: 1180px;
+    margin: 40px auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.client-testimonial-video{
+    width: 100%;
+    aspect-ratio: 9 / 16;
+
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+
+    background: #111;
+
+    box-shadow: 0 18px 50px rgba(0,0,0,0.14);
+}
+
+.client-testimonial-video img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.testimonial-play{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.88);
+
+    color: #ff5a3d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    padding-left: 4px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px){
+
+    .client-testimonial-row{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin: 26px auto 34px;
+    }
+
+    .client-testimonial-video{
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .testimonial-play{
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+}
+.time-slot-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time-mode.active{
+    background: rgba(255,255,255,0.12);
+}
+
+.time-slot{
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.time-slot:hover{
+    border-color: #ff5a3d;
+    background: rgba(255,90,61,0.12);
 }
