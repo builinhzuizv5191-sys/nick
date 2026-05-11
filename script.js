@@ -283,3 +283,22 @@ timeModeButtons.forEach(button => {
 });
 
 renderTimeSlots();
+// MESSAGE ME AFTER TIME SELECT
+const bookingMessageBox = document.getElementById("bookingMessageBox");
+const messageMeBtn = document.getElementById("messageMeBtn");
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("time-slot")) {
+        if (bookingMessageBox) {
+            bookingMessageBox.classList.remove("show-choices");
+            bookingMessageBox.classList.add("show-message");
+        }
+    }
+});
+
+if (messageMeBtn) {
+    messageMeBtn.addEventListener("click", () => {
+        bookingMessageBox.classList.remove("show-message");
+        bookingMessageBox.classList.add("show-choices");
+    });
+}
