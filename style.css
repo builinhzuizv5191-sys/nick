@@ -901,6 +901,16 @@ body {
 .nav-center a {
     font-size: 17px;
     font-weight: 700;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.nav-center a:hover{
+    color: #ff5a3d;
+    transform: translateY(-2px);
 }
 
 .logo img {
@@ -1793,10 +1803,15 @@ textarea:focus{
     color: #111;
     font-size: 17px;
     font-weight: 700;
-}
 
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
 .footer-links a:hover{
     color: #ff5a3d;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px){
@@ -2089,8 +2104,9 @@ textarea:focus{
 
 .message-buttons{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: 28px;
     flex-wrap: wrap;
 }
 
@@ -2116,6 +2132,29 @@ textarea:focus{
     box-shadow: 0 14px 36px rgba(255,90,61,0.22);
 }
 
+.discord-info{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.discord-line{
+    width: 1px;
+    height: 42px;
+    background: rgba(255,255,255,0.18);
+}
+
+.discord-info p{
+    color: rgba(255,255,255,0.72);
+    font-size: 18px;
+    margin: 0;
+}
+
+.discord-info strong{
+    color: #fff;
+    font-weight: 700;
+}
+
 @media (max-width: 768px){
     .contact-box h1{
         font-size: 42px;
@@ -2132,8 +2171,9 @@ textarea:focus{
     .message-buttons{
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
-
+    
     .message-buttons a{
         width: 220px;
     }
