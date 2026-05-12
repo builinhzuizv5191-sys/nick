@@ -910,7 +910,6 @@ body {
 
 .nav-center a:hover{
     color: #ff5a3d;
-    transform: translateY(-2px);
 }
 
 .logo img {
@@ -1809,9 +1808,9 @@ textarea:focus{
         transform 0.25s ease,
         opacity 0.25s ease;
 }
+
 .footer-links a:hover{
     color: #ff5a3d;
-    transform: translateY(-2px);
 }
 
 @media (max-width: 768px){
