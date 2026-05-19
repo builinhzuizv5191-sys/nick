@@ -302,3 +302,23 @@ if (messageMeBtn) {
         bookingMessageBox.classList.add("show-choices");
     });
 }
+// MOBILE MENU
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileCloseBtn = document.getElementById("mobileCloseBtn");
+const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
+
+if (mobileMenuBtn && mobileCloseBtn && mobileMenuOverlay) {
+    mobileMenuBtn.addEventListener("click", () => {
+        mobileMenuOverlay.classList.add("active");
+    });
+
+    mobileCloseBtn.addEventListener("click", () => {
+        mobileMenuOverlay.classList.remove("active");
+    });
+
+    mobileMenuOverlay.querySelectorAll("a, .open-contact").forEach(item => {
+        item.addEventListener("click", () => {
+            mobileMenuOverlay.classList.remove("active");
+        });
+    });
+}
