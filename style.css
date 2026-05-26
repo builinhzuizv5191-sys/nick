@@ -309,7 +309,7 @@ body {
 }
 
 .video-card {
-    width: 300px;
+    width: 450px;
     flex: 0 0 auto;
     background: #0f0f0f;
     border-radius: 14px;
@@ -331,7 +331,7 @@ body {
 
 .video-card img {
     width: 100%;
-    height: 170px;
+    height: 255px;
     object-fit: cover;
     display: block;
 
@@ -1500,14 +1500,32 @@ body {
 }
 
 /* MODERN ABOUT SECTION */
-
 .about-modern{
-    max-width: 760px;
+    max-width: 1200px;
     margin: 45px auto 0;
     padding: 0 20px;
     text-align: left;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+.about-left{
+    width: 100%;
 }
 
+.about-right{
+    width: 100%;
+}
+
+.about-right img{
+    width: 100%;
+    display: block;
+    border-radius: 28px;
+    object-fit: cover;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
 .about-tag{
     font-size: 16px;
     letter-spacing: 5px;
@@ -1571,6 +1589,15 @@ body {
 
     .about-modern{
         margin-top: 35px;
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .about-right{
+       order: -1;
+    }
+
+    .about-right img{
+       border-radius: 20px;
     }
 
     .about-name{
