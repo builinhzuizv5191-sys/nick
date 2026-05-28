@@ -24,7 +24,7 @@ body {
     overflow: visible;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     padding: 16px 32px;
@@ -39,22 +39,6 @@ body {
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 120px;
-}
-
-.logo img {
-    height: 36px;
-}
-
-.logo span {
-    font-weight: 600;
-    font-size: 20px;
 }
 
 /* NAV LINKS */
@@ -406,7 +390,7 @@ body {
 }
 
 .testimonial-section {
-    padding: 30px 20px 10px;
+    padding: 40px 40px 20px;
 }
 
 .testimonial-section h2 {
@@ -892,10 +876,15 @@ body {
     }
 }
 .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
     align-items: center;
+    justify-content: center;
+
     gap: 34px;
-    transform: translateX(-120px);
 }
 
 .nav-center a {
@@ -987,13 +976,11 @@ body {
     }
 }
 /* NAVBAR POSITION FIX */
-.logo {
-    margin-left: 120px;
-}
-
 .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     gap: 34px;
-    transform: translateX(30px);
 }
 
 .nav-center a {
@@ -1001,9 +988,6 @@ body {
     font-weight: 700;
 }
 
-.nav-right {
-    margin-right: 90px;
-}
 @media (max-width: 768px) {
     .logo {
         margin-left: 0;
@@ -1163,341 +1147,6 @@ body {
         text-align: center;
     }
 }
-/* BOOKING SCREEN */
-.booking-card {
-    width: min(980px, 100%);
-    min-height: 420px;
-    display: grid;
-    grid-template-columns: 230px 1fr 230px;
-    background: rgba(18, 18, 18, 0.88);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 30px 90px rgba(0,0,0,0.45);
-    position: relative;
-    z-index: 2;
-}
-
-.booking-info,
-.booking-calendar,
-.booking-times {
-    padding: 26px;
-
-    display: flex;
-    flex-direction: column;
-
-    height: 620px;
-    overflow: hidden;
-}
-
-.booking-times::-webkit-scrollbar {
-    width: 0;
-}
-
-.booking-info {
-    border-right: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.booking-info img {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 18px;
-}
-
-.booking-name {
-    color: rgba(255,255,255,0.72);
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-.booking-info h2 {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 18px;
-}
-
-.booking-desc {
-    color: rgba(255,255,255,0.88);
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 34px;
-    text-align: left;
-}
-
-.booking-detail {
-    color: #fff;
-    font-size: 14px;
-    margin-top: 18px;
-}
-
-.booking-calendar {
-    border-right: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    flex-direction: column;
-}
-
-.calendar-top,
-.times-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.calendar-top h3,
-.times-top h3 {
-    color: #fff;
-    font-size: 20px;
-}
-
-.calendar-arrows {
-    display: flex;
-    gap: 22px;
-    color: rgba(255,255,255,0.5);
-    font-size: 26px;
-}
-
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 18px;
-    text-align: center;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 52px);
-    gap: 4px;
-}
-
-.calendar-grid button,
-.calendar-grid span {
-    height: 52px;
-    border-radius: 10px;
-}
-
-.calendar-grid button {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.calendar-grid button:hover {
-    background: rgba(255,255,255,0.10);
-}
-
-.calendar-grid button:nth-child(n+18):nth-child(-n+28) {
-    background: rgba(255,255,255,0.18);
-}
-
-.calendar-grid .selected {
-    background: #fff7d6 !important;
-    color: #111;
-}
-
-.time-mode {
-    padding: 7px 10px;
-    background: transparent;
-    border: none;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.time-mode.active {
-    background: rgba(255,255,255,0.10);
-}
-
-.time-slot {
-    width: 100%;
-    padding: 11px 12px;
-    margin-bottom: 14px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: transparent;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.time-slot:hover {
-    border-color: #ff5a3d;
-    background: rgba(255,90,61,0.12);
-}
-
-/* MOBILE BOOKING */
-@media (max-width: 900px) {
-    .contact-screen {
-        align-items: center;
-        padding: 40px 16px;
-        overflow-y: auto;
-    }
-
-    .booking-card {
-        grid-template-columns: 1fr;
-    }
-
-    .booking-info,
-    .booking-calendar {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .booking-info,
-    .booking-calendar,
-    .booking-times {
-        padding: 18px;
-    }
-
-    .calendar-grid button,
-    .calendar-grid span {
-        height: 46px;
-    }
-}
-.booking-detail {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.booking-icon {
-    font-size: 22px;
-    color: #ffffff;
-    line-height: 1;
-}
-.timezone-box {
-    position: relative;
-    cursor: pointer;
-}
-
-.timezone-box {
-    position: relative;
-    cursor: pointer;
-    width: fit-content;
-}
-
-.timezone-dropdown {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 36px;
-
-    width: 320px;
-    max-height: 260px;
-    overflow-y: auto;
-
-    background: rgba(18, 18, 18, 0.98);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 14px;
-    padding: 8px;
-
-    z-index: 50;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.45);
-}
-
-/* hide ugly scrollbar */
-.timezone-dropdown {
-    scrollbar-width: none;
-}
-
-.timezone-dropdown::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.timezone-box.active .timezone-dropdown {
-    display: block;
-}
-
-.timezone-dropdown button {
-    width: 100%;
-    padding: 12px 14px;
-
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.78);
-
-    text-align: left;
-    border-radius: 10px;
-    cursor: pointer;
-
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.timezone-dropdown button:hover {
-    background: rgba(255,255,255,0.10);
-    color: #ffffff;
-}
-
-.timezone-dropdown button.active-timezone {
-    background: rgba(255,255,255,0.14);
-    color: #ffffff;
-}
-
-.timezone-box.active .timezone-dropdown {
-    display: block;
-}
-
-.timezone-dropdown button {
-    width: 100%;
-    padding: 7px 10px;
-    background: transparent;
-    border: none;
-    color: white;
-    text-align: left;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.timezone-dropdown button:hover {
-    background: rgba(255, 90, 61, 0.16);
-    color: #ff5a3d;
-}
-.calendar-nav-btn {
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.55);
-    font-size: 28px;
-    cursor: pointer;
-    padding: 0 6px;
-}
-
-.calendar-nav-btn.active {
-    color: #ffffff;
-}
-
-.calendar-nav-btn:disabled {
-    opacity: 0.25;
-    cursor: not-allowed;
-}
-
-.calendar-grid .empty-day {
-    height: 52px;
-}
-
-.calendar-grid .calendar-date {
-    height: 52px;
-    border-radius: 10px;
-}
 
 /* MODERN ABOUT SECTION */
 .about-modern{
@@ -1552,14 +1201,22 @@ body {
 
 .about-headline span{
     color: #ff5a3d;
+    position: relative;
+    display: inline-block;
 }
 
-.about-line{
-    width: 50px;
-    height: 4px;
-    border-radius: 999px;
+.about-headline span::after{
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 100%;
+    height: 3px;
+
     background: #ff5a3d;
-    margin-bottom: 28px;
+    border-radius: 999px;
 }
 
 .about-categories{
@@ -1659,119 +1316,6 @@ textarea:focus{
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(255, 90, 61, 0.28);
 }
-/* CLIENT TESTIMONIAL SHORTS */
-
-.client-testimonial-row{
-    width: 100%;
-    max-width: 1180px;
-    margin: 40px auto 50px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-}
-
-.client-testimonial-video{
-    width: 100%;
-    aspect-ratio: 9 / 16;
-
-    border-radius: 28px;
-    overflow: hidden;
-    position: relative;
-
-    background: #111;
-
-    box-shadow: 0 18px 50px rgba(0,0,0,0.14);
-}
-
-.client-testimonial-video img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.testimonial-play{
-    position: absolute;
-    inset: 0;
-    margin: auto;
-
-    width: 54px;
-    height: 54px;
-
-    border-radius: 50%;
-    background: rgba(255,255,255,0.88);
-
-    color: #ff5a3d;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 20px;
-    padding-left: 4px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 768px){
-
-    .client-testimonial-row{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-        margin: 26px auto 34px;
-    }
-
-    .client-testimonial-video{
-        width: 100%;
-        border-radius: 18px;
-    }
-
-    .testimonial-play{
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
-    }
-}
-.time-slot-list{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    overflow-y: auto;
-
-    padding-right: 6px;
-    margin-top: 0;
-
-    flex: 1;
-
-    scrollbar-width: none;
-}
-
-.time-slot-list::-webkit-scrollbar{
-    width: 0;
-}
-
-.time-mode.active{
-    background: rgba(255,255,255,0.12);
-}
-
-.time-slot{
-    width: 100%;
-    padding: 11px 12px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: transparent;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.time-slot:hover{
-    border-color: #ff5a3d;
-    background: rgba(255,90,61,0.12);
-}
 
 /* FOOTER */
 
@@ -1866,7 +1410,7 @@ textarea:focus{
 /* TRUST VIDEO SECTION */
 
 .trust-video-section{
-    padding: 70px 20px 80px;
+    padding: 70px 40px 80px;
     background: #f9f9f9;
     text-align: center;
 }
@@ -1903,11 +1447,11 @@ textarea:focus{
 }
 
 .trust-video-grid{
-    max-width: 920px;
+    max-width: 1250px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 28px;
 }
 
 .trust-video-card{
@@ -1957,108 +1501,7 @@ textarea:focus{
         gap: 14px;
     }
 }
-/* BOOKING MESSAGE BUTTON */
 
-.booking-message-box{
-    margin-top: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 92px;
-}
-
-.message-me-btn{
-    opacity: 0;
-    transform: translateY(14px) scale(0.96);
-    pointer-events: none;
-
-    padding: 14px 28px;
-    border-radius: 999px;
-    border: none;
-
-    background: linear-gradient(135deg, #ff5a3d, #ff2d20);
-    color: white;
-
-    font-size: 15px;
-    font-weight: 800;
-    cursor: pointer;
-
-    transition: 0.35s ease;
-    box-shadow: 0 12px 30px rgba(255,90,61,0.22);
-}
-
-.booking-message-box.show-message .message-me-btn{
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-}
-
-.contact-choice-box{
-    display: none;
-    text-align: center;
-
-    opacity: 0;
-    transform: translateY(16px) scale(0.96);
-
-    transition: 0.35s ease;
-}
-
-.booking-message-box.show-choices .contact-choice-box{
-    display: block;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    animation: choicePop 0.35s ease forwards;
-}
-
-.booking-message-box.show-choices .message-me-btn{
-    display: none;
-}
-
-.contact-choice-box p{
-    color: rgba(255,255,255,0.78);
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 14px;
-}
-
-.contact-choice-buttons{
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.contact-choice-buttons a{
-    padding: 12px 22px;
-    border-radius: 999px;
-    text-decoration: none;
-
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.14);
-    color: #ffffff;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    transition: 0.3s ease;
-}
-
-.contact-choice-buttons a:hover{
-    background: rgba(255,90,61,0.18);
-    border-color: #ff5a3d;
-    color: #ff5a3d;
-    transform: translateY(-2px);
-}
-
-@keyframes choicePop{
-    from{
-        opacity: 0;
-        transform: translateY(16px) scale(0.96);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
 /* SIMPLE MESSAGE PAGE */
 
 .contact-screen{
@@ -2462,4 +1905,110 @@ textarea:focus{
         font-weight: 600;
         color: rgba(0,0,0,0.78);
     }
+}
+.hero h1{
+    max-width: 1500px;
+    font-size: clamp(44px, 4.2vw, 64px);
+    line-height: 1.08;
+}
+
+.hero h1 .highlight{
+    white-space: nowrap;
+}
+/* CLEAN ABOUT TEXT */
+
+.about-left{
+    max-width: 620px;
+}
+
+.about-text{
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(0,0,0,0.72);
+    margin-bottom: 22px;
+}
+
+.about-text.highlight-box{
+    position: relative;
+    padding-left: 34px;
+}
+
+.about-text.highlight-box::before{
+    content: "";
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #ff5a3d;
+    border-radius: 999px;
+}
+
+.highlight-retention{
+    background: #ffe1dc;
+    color: #ff5a3d;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.bold-dark{
+    color: #111;
+    font-weight: 700;
+}
+.about-section .about-text{
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(0,0,0,0.72);
+    margin: 0 0 18px 0;
+}
+
+.about-copy{
+    position: relative;
+    padding-left: 30px;
+    max-width: 600px;
+}
+
+.about-copy::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: calc(100% - 8px);
+    background: #ff5a3d;
+    border-radius: 999px;
+}
+.about-line{
+    display:none;
+}
+
+.about-copy{
+    position: relative;
+    padding-left: 32px;
+    max-width: 620px;
+    margin-bottom: 34px;
+}
+
+.about-copy::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:6px;
+    width:4px;
+    height:calc(100% - 12px);
+    background:#ff5a3d;
+    border-radius:999px;
+}
+
+.about-section .about-text{
+    font-size:17px;
+    line-height:1.75;
+    color:rgba(0,0,0,0.72);
+    margin:0 0 18px 0;
 }
