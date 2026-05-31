@@ -330,15 +330,15 @@ body {
 }
 
 .video-info h3 {
-    font-size: 14px;
+    font-size: 22px;
     line-height: 1.35;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: #ffffff;
 }
 
 .video-info p {
-    font-size: 12px;
+    font-size: 18px;
     color: #bdbdbd;
 }
 
